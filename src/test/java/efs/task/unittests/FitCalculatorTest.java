@@ -1,6 +1,7 @@
 package efs.task.unittests;
 
 
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -76,7 +77,7 @@ class FitCalculatorTest {
     }
 
     @ParameterizedTest(name = "weight={0}, height={1}")
-    @CsvFileSource(resources = "/data.csv")
+    @CsvFileSource(resources = "/data.csv", numLinesToSkip = 1)
     public void shouldReturnFalse_forGivenCsvFile(double height, double weight) {
         // when
         boolean valid = FitCalculator.isBMICorrect(weight, height);
